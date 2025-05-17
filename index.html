@@ -1,0 +1,370 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000; min-height: 14.0px}
+    span.s1 {font-kerning: none}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
+<p class="p1"><span class="s1">&lt;html lang="en"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;head&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;meta charset="UTF-8"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;title&gt;Travel Status App&lt;/title&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;link href="https://cdn.tailwindcss.com" rel="stylesheet"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/head&gt;</span></p>
+<p class="p1"><span class="s1">&lt;body class="bg-gray-100 min-h-screen flex items-center justify-center p-4"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div class="w-full max-w-md bg-white rounded-lg shadow-lg p-6"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;h1 class="text-2xl font-bold text-center mb-6"&gt;My Availability Status&lt;/h1&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;!-- Home Status --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div id="homeStatus" class="flex flex-col items-center mb-6" style="display: none;"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="w-24 h-24 rounded-full bg-green-100 flex items-center justify-center mb-2"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;!-- Green Thumbs Up --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-500"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;path d="M7 10v12"&gt;&lt;/path&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2h0a3.13 3.13 0 0 1 3 3.88Z"&gt;&lt;/path&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/svg&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;p class="text-lg font-semibold text-green-600"&gt;I'm Home!&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;p class="text-center mt-2" id="nextTripText"&gt;No upcoming trips scheduled&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;!-- Traveling Status --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div id="travelingStatus" class="flex flex-col items-center mb-6" style="display: none;"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="w-24 h-24 rounded-full bg-red-100 flex items-center justify-center mb-2"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;!-- Red Thumbs Down --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-red-500"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;path d="M17 14V2"&gt;&lt;/path&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;path d="M9 18.12 10 14H4.17a2 2 0 0 1-1.92-2.56l2.33-8A2 2 0 0 1 6.5 2H20a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.76a2 2 0 0 0-1.79 1.11L12 22h0a3.13 3.13 0 0 1-3-3.88Z"&gt;&lt;/path&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/svg&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;p class="text-lg font-semibold text-red-600"&gt;I'm Traveling&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;p class="text-center mt-2" id="currentTripText"&gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;p class="text-center mt-1" id="returnDateText"&gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="border-t pt-4"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;p class="text-sm text-gray-600 mb-2"&gt;Upload your iCal file to update status:&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="flex items-center justify-center"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;label class="flex items-center px-4 py-2 bg-blue-500 text-white rounded-lg cursor-pointer hover:bg-blue-600"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"&gt;&lt;/path&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;polyline points="17 8 12 3 7 8"&gt;&lt;/polyline&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;line x1="12" y1="3" x2="12" y2="15"&gt;&lt;/line&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/svg&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;span&gt;Upload Calendar&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;input type="file" accept=".ics" id="calendarUpload" class="hidden"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/label&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;p id="uploadStatus" class="text-center mt-2" style="display: none;"&gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="mt-4 text-center text-xs text-gray-500"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;button id="demoButton" class="mt-2 text-blue-500 underline"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>Load Demo Data</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;script&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// Airport codes and travel keywords that indicate travel</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const travelCodes = ['AMS', 'FRA', 'CDG', 'LHR', 'FCO', 'ATH', 'TLV', 'ACC', 'GRU', 'MAD', 'BCN'];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const travelKeywords = ['trip', 'travel', 'flight', 'airport', 'journey', 'visit', 'business trip'];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// DOM Elements</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const homeStatus = document.getElementById('homeStatus');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const travelingStatus = document.getElementById('travelingStatus');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const nextTripText = document.getElementById('nextTripText');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const currentTripText = document.getElementById('currentTripText');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const returnDateText = document.getElementById('returnDateText');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const calendarUpload = document.getElementById('calendarUpload');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const uploadStatus = document.getElementById('uploadStatus');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const demoButton = document.getElementById('demoButton');</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// Initialize with demo data</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>loadDemoData();</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// Event listeners</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>calendarUpload.addEventListener('change', handleFileUpload);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>demoButton.addEventListener('click', loadDemoData);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function handleFileUpload(e) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const file = e.target.files[0];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>if (!file) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>showError("No file selected");</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>return;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>showLoading("Processing calendar file...");</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const reader = new FileReader();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>reader.onload = (e) =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>try {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>const events = parseICal(e.target.result);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>updateStatus(events);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>hideUploadStatus();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>} catch (err) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>showError("Failed to parse calendar file: " + err.message);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>};</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>reader.onerror = () =&gt; showError("Error reading file");</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>reader.readAsText(file);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function parseICal(icalData) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>if (!icalData || typeof icalData !== 'string') {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>return [];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>console.log("Parsing iCal data...");</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const events = [];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const lines = icalData.split('\n');</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>let currentEvent = null;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>let description = '';</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>for (let i = 0; i &lt; lines.length; i++) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const line = lines[i].trim();</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>if (line === 'BEGIN:VEVENT') {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>currentEvent = {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>summary: '',</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>description: '',</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>location: ''</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>};</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>} else if (line === 'END:VEVENT' &amp;&amp; currentEvent) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>// Add the collected description to the event</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>if (description) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>currentEvent.description = description;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>description = '';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>events.push(currentEvent);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>currentEvent = null;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>} else if (currentEvent) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>if (line.startsWith('SUMMARY:')) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>currentEvent.summary = line.substring(8).replace(/\\,/g, ',').replace(/\\n/g, ' ');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>} else if (line.startsWith('DESCRIPTION:')) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>description = line.substring(12).replace(/\\,/g, ',').replace(/\\n/g, ' ');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>} else if (line.startsWith(' ') &amp;&amp; description) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>// This is a continuation of the description</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>description += line.substring(1).replace(/\\,/g, ',').replace(/\\n/g, ' ');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>} else if (line.startsWith('DTSTART')) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>// Handle different DTSTART formats</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>let dateStr = '';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>if (line.includes(':')) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>dateStr = line.split(':')[1];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>} else if (line.includes(';VALUE=DATE:')) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>dateStr = line.split(';VALUE=DATE:')[1];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>// For all-day events, append time</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>if (dateStr.length === 8) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>dateStr += 'T000000Z';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>currentEvent.start = parseICalDate(dateStr);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>} else if (line.startsWith('DTEND')) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>// Handle different DTEND formats</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>let dateStr = '';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>if (line.includes(':')) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>dateStr = line.split(':')[1];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>} else if (line.includes(';VALUE=DATE:')) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>dateStr = line.split(';VALUE=DATE:')[1];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>// For all-day events, append time</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>if (dateStr.length === 8) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>dateStr += 'T235959Z';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>currentEvent.end = parseICalDate(dateStr);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>} else if (line.startsWith('LOCATION:')) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>currentEvent.location = line.substring(9).replace(/\\,/g, ',').replace(/\\n/g, ' ');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>console.log(`Found ${events.length} events in the calendar`);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>return events;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function parseICalDate(dateStr) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>if (!dateStr || dateStr.length &lt; 8) return null;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>// Format: 20220101T120000Z or 20220101</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>try {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const year = dateStr.substring(0, 4);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const month = dateStr.substring(4, 6);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const day = dateStr.substring(6, 8);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>let time = '00:00:00';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>if (dateStr.includes('T')) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>const timeStr = dateStr.split('T')[1].replace('Z', '');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>if (timeStr.length &gt;= 6) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const hour = timeStr.substring(0, 2);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const minute = timeStr.substring(2, 4);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const second = timeStr.length &gt; 4 ? timeStr.substring(4, 6) : '00';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>time = `${hour}:${minute}:${second}`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>return new Date(`${year}-${month}-${day}T${time}Z`);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>} catch (error) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>console.error("Error parsing date:", error);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>return null;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function updateStatus(events) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>if (!events || !Array.isArray(events)) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>showError("Invalid event data");</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>return;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>console.log("Updating status with", events.length, "events");</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const now = new Date();</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>// Find travel events - check for airport codes or travel keywords</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const travelEvents = events.filter(event =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>if (!event) return false;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// Convert all text fields to lowercase for case-insensitive matching</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const summary = (event.summary || '').toLowerCase();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const location = (event.location || '').toLowerCase();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const description = (event.description || '').toLowerCase();</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// Check for airport codes (case sensitive)</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const hasAirportCode = travelCodes.some(code =&gt;<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>summary.includes(code) || location.includes(code) || description.includes(code)</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// Check for travel keywords (case insensitive)</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const hasTravelKeyword = travelKeywords.some(keyword =&gt;<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>summary.includes(keyword.toLowerCase()) ||<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>location.includes(keyword.toLowerCase()) ||<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>description.includes(keyword.toLowerCase())</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>return hasAirportCode || hasTravelKeyword;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>});</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>console.log("Found", travelEvents.length, "travel events");</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>// Sort events by start date</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>travelEvents.sort((a, b) =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>if (!a.start) return 1;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>if (!b.start) return -1;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>return a.start - b.start;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>});</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>// Find current trip</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const currentTrip = travelEvents.find(event =&gt;<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>event.start &amp;&amp; event.end &amp;&amp;<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>event.start &lt;= now &amp;&amp; event.end &gt;= now</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>// Find next trip</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const futureTrips = travelEvents.filter(event =&gt;<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>event.start &amp;&amp; event.start &gt; now</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const nextTrip = futureTrips.length &gt; 0 ? futureTrips[0] : null;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>console.log("Current trip:", currentTrip);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>console.log("Next trip:", nextTrip);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>// Update UI</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>if (currentTrip) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// Currently traveling</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>homeStatus.style.display = 'none';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>travelingStatus.style.display = 'flex';</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>currentTripText.textContent = `Current trip: ${currentTrip.summary || 'Travel Event'}`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>returnDateText.textContent = `Returning home: ${formatDate(currentTrip.end)}`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>} else {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// At home</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>homeStatus.style.display = 'flex';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>travelingStatus.style.display = 'none';</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>if (nextTrip) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>nextTripText.textContent = `Next trip: ${formatDate(nextTrip.start)}`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>} else {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>nextTripText.textContent = 'No upcoming trips scheduled';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function formatDate(date) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>if (!date) return 'N/A';</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>try {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>return date.toLocaleDateString('en-US', {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>weekday: 'long',</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>year: 'numeric',</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>month: 'long',</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>day: 'numeric',</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>hour: '2-digit',</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>minute: '2-digit'</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>});</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>} catch (error) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>console.error("Error formatting date:", error);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>return 'Invalid date';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function loadDemoData() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>try {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const now = new Date();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const tomorrow = new Date(now);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>tomorrow.setDate(now.getDate() + 1);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const nextWeek = new Date(now);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>nextWeek.setDate(now.getDate() + 7);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// Randomly choose a scenario</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const isHome = Math.random() &gt; 0.5;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>if (isHome) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>// At home scenario</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>homeStatus.style.display = 'flex';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>travelingStatus.style.display = 'none';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>nextTripText.textContent = `Next trip: ${formatDate(tomorrow)}`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>} else {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>// Traveling scenario</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>homeStatus.style.display = 'none';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>travelingStatus.style.display = 'flex';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>currentTripText.textContent = 'Current trip: Business Trip to LHR';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>returnDateText.textContent = `Returning home: ${formatDate(nextWeek)}`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>} catch (error) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>console.error("Error loading demo data:", error);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>showError("Failed to load demo data");</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function showLoading(message) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>uploadStatus.textContent = message;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>uploadStatus.style.display = 'block';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>uploadStatus.className = 'text-center mt-2 text-gray-600';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function showError(message) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>uploadStatus.textContent = message;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>uploadStatus.style.display = 'block';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>uploadStatus.className = 'text-center mt-2 text-red-500';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function hideUploadStatus() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>uploadStatus.style.display = 'none';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/script&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/body&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/html&gt;</span></p>
+</body>
+</html>
